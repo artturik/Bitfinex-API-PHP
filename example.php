@@ -9,8 +9,8 @@ $ask = $getask['ask'];
 $getbid = json_decode(file_get_contents("https://api.bitfinex.com/v1/pubticker/BTCUSD"), true);
 $bid = $getbid['bid'];
 
-$getavg = json_decode(file_get_contents("https://api.bitcoinaverage.com/ticker/global/USD/"), true);
-$avg = $getavg['24h_avg'];
+$getavg = json_decode(file_get_contents("https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD"), true);
+$avg = $getavg['averages']['day'];
 
 $diff = $avg - $ask;
 $diff2 = $bid -  $avg;
